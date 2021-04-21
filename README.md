@@ -1,30 +1,35 @@
 # MjPasswd
 
 #### 介绍
-MianJu的密码管理器
+MianJu的密码管理器：
 
-#### 软件架构
-软件架构说明
+![yjtp](https://ae01.alicdn.com/kf/U9a22477757b242ad902ee9d807c4dfd3M.jpg)
+
+**提供一个给他人存储密码和查询密码的工具，利用Mysql在云端查询，可以在桌面应用端、Android端、Web端查询；用户存储的密码信息会通过二重AES加密算法提交到云端**
+
 
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+0. 请先保证有Mysql环境，本地或服务器，此项目基于Mysql来管理数据
+
+1. Lib中导入前置包：
+
+   mysql-connector-java-8.0.21.jar 
+
+   commons-codec-1.15.jar
+
+2.  按照要求配置[Config](https://gitee.com/mian_j/mj-passwd/blob/master/MJpasswd/src/com/MianJu/config/Config.java)信息
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  桌面应用（Windows）：运行[MjPasswdApplication.java](https://gitee.com/mian_j/mj-passwd/blob/master/MJpasswd/src/com/MianJu/src/MjPasswdApplication.java)文件
+2.  Android：待开发
+3.  Web：待开发
 
 #### 参与贡献
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+1.  [MianJu——架构、开发、测试](http://mianj.xyz/)
 
 
 #### 特技
