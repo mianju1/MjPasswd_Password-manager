@@ -51,7 +51,7 @@ public class UserPasswdDate {
 
     public boolean deleteUserPasswd(UserClass userClass, int index){
         /*
-        删除一个用户存储的数据(通过序号删除)
+        删除一个用户存储的数据(通过用户显示序号删除)
          */
         try {
             sql = String.format("DELETE FROM `passwddate` WHERE `p_autoid` = %d", getUsersAutoID(userClass, index));

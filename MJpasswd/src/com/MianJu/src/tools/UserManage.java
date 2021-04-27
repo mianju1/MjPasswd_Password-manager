@@ -18,10 +18,10 @@ public class UserManage extends MysqlController {
         }else if (!(userClass.getPasswd().matches("[^\\u4E00-\\u9FFF ]{6,15}"))){
             System.out.println("密码需要不为中文6-15个字符且不能有空格");
         }else {
-            String sql = String.format("SELECT * FROM userdate WHERE u_name REGEXP '%s'",userClass.getName());
+            String sql = String.format("SELECT * FROM userdate WHERE u_name = '%s' OR u_email = '%s'",userClass.getName(),userClass.getEmailUser_local());
             try {
                 if (super.selectDate(sql).next()){
-                    System.out.println("相同的名称已存在，请重新输入一个名称");
+                    System.out.println("相同的名称或邮箱已存在");
                     return false;
                 }
             }catch (SQLException e){
@@ -85,7 +85,7 @@ public class UserManage extends MysqlController {
 
                 //然后将密钥再一层加密，表层密钥在配置文件
                 userKey = EncryptDate.AES_Encrypt(userKey, Config.KEY);
-                String sql = String.format("REPLACE INTO userdate(`u_id`,`u_name`,`u_passwd`,`u_createtime`,`u_key`) VALUE('%s','%s','%s',%s,'%s')",userClass.getUserId_local(),userClass.getName(),userClass.getPasswd(),"CURRENT_TIMESTAMP",userKey);
+                String sql = String.format("REPLACE INTO userdate(`u_id`,`u_name`,`u_passwd`,`u_createtime`,`u_key`,`u_email`) VALUE('%s','%s','%s',%s,'%s','%s')",userClass.getUserId_local(),userClass.getName(),userClass.getPasswd(),"CURRENT_TIMESTAMP",userKey,userClass.getEmailUser_local());
                 mysqlController.modifyDate(sql);
             }
         }catch (SQLException throwables){

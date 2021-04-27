@@ -72,7 +72,8 @@ public class UserPasswdClass {
         同步数据库的函数
          */
         String sql;
-        ArrayList<UserPasswdClass> userPasswdClasses = new ArrayList<>();
+//        ArrayList<UserPasswdClass> userPasswdClasses = new ArrayList<>();
+        list.clear();//每一次同步清空数据
         MysqlController mysqlController = new MysqlController();
 
         sql = String.format("SELECT * FROM `passwddate` WHERE u_id = '%s'",userClass.getUserId());
