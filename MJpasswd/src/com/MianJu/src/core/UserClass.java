@@ -15,6 +15,13 @@ public class UserClass {
     private int count;
     private String key;
     private int maxUserCount;
+    private String emailUser;
+
+    public UserClass(String name, String passwd, String emailUser) {
+        this.name = name;
+        this.passwd = passwd;
+        this.emailUser = emailUser;
+    }
 
     public UserClass(String name, String passwd) {
         this.name = name;
@@ -81,6 +88,32 @@ public class UserClass {
         }else {
             System.out.println("请先登录！");
             return count;
+        }
+    }
+
+    public String getEmailUser_local(){
+        return emailUser;
+    }
+
+    public String getEmailUser() {
+        {
+            if (userLoginStatus) {
+                String sql = String.format("SELECT * FROM userdate WHERE u_id REGEXP '%s'", getUserId());
+                ResultSet resultSet = new MysqlController().selectDate(sql);
+                try {
+                    if (resultSet.next()) {
+                        emailUser = resultSet.getString("u_email");
+                        //返回解码后的用户密钥，密钥格式：用户ID+用户密码+用户ID的第3位数字
+                        return emailUser;
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return emailUser;
+            }else {
+                System.out.println("请先登录！");
+                return emailUser;
+            }
         }
     }
 

@@ -7,6 +7,9 @@
 # BlueJ files
 *.ctxt
 
+#Config file
+/MJpasswd/src/com/MianJu/config/Config.java
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 

@@ -1,0 +1,526 @@
+JFDML JFormDesigner: "7.0.3.0.337" Java: "11.0.9.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+			"autoSize": false
+		} ) {
+			name: "FunctionWin"
+			"undecorated": true
+			"visible": true
+			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/com/MianJu/Test/GUI/resources/logo.png" )
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowOpened", "FunctionWinWindowOpened", true ) )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label_aboutus"
+				"text": "关 于 作 者"
+				"horizontalAlignment": 0
+				"background": new java.awt.Color( 255, 255, 255, 255 )
+				"opaque": true
+				"font": &Font0 new java.awt.Font( "等线 Light", 0, 16 )
+				"cursor": &Cursor0 new java.awt.Cursor( 12 )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseReleased", "label_aboutus3MouseReleased", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 155
+				"height": 65
+				"x": 0
+				"y": 97
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label_my"
+				"text": "个 人 账 号"
+				"horizontalAlignment": 0
+				"opaque": true
+				"background": new java.awt.Color( 255, 255, 255, 255 )
+				"font": #Font0
+				"cursor": #Cursor0
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseReleased", "label_my3MouseReleased", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 155
+				"height": 65
+				"x": 0
+				"y": 163
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label_select"
+				"horizontalAlignment": 0
+				"text": "数 据 中 心"
+				"background": new java.awt.Color( 255, 255, 255, 255 )
+				"opaque": true
+				"font": #Font0
+				"cursor": #Cursor0
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseReleased", "label_select3MouseReleased", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 156
+				"height": 65
+				"x": 0
+				"y": 31
+			} )
+			add( new FormContainer( "javax.swing.JDesktopPane", new FormLayoutManager( class javax.swing.JDesktopPane ) ) {
+				name: "Funselect3"
+				"background": new java.awt.Color( 222, 222, 222, 255 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"height": 560
+				"width": 156
+				"y": 30
+				"x": 0
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+				"autoSize": false
+			} ) {
+				name: "panel_menu3"
+				"background": new java.awt.Color( 255, 255, 255, 255 )
+				addEvent( new FormEvent( "java.awt.event.MouseMotionListener", "mouseDragged", "panel_menuMouseDragged", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "panel_menuMousePressed", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseReleased", "panel_menuMouseReleased", true ) )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button_min"
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"borderPainted": false
+					"background": new java.awt.Color( 235, 235, 235, 255 )
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/com/MianJu/Test/GUI/resources/最小化.png" )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseReleased", "button_minMouseReleased", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 810
+					"y": 0
+					"width": 45
+					"height": 30
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button_close"
+					"borderPainted": false
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/com/MianJu/Test/GUI/resources/关闭.png" )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseReleased", "button_closeMouseReleased", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"height": 30
+					"x": 855
+					"y": 0
+					"width": 45
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label_logo"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/com/MianJu/Test/GUI/resources/logo.png" )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"width": 30
+					"height": 40
+					"y": -5
+				} )
+				add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+					name: "menuBar3"
+					"background": new java.awt.Color( 235, 235, 235, 255 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 40
+					"y": -5
+					"width": 770
+					"height": 40
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 0
+				"y": 0
+				"height": 30
+				"width": 900
+			} )
+			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+				name: "tabbedPane1"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+					"autoSize": false
+				} ) {
+					name: "查询数据"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+						name: "panel_date"
+						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+							name: "scrollPane1"
+							add( new FormComponent( "javax.swing.JTable" ) {
+								name: "table_copy"
+								"font": new java.awt.Font( "方正姚体", 0, 18 )
+								"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+									add( "账号" )
+									add( "密码" )
+									add( "所属网站" )
+									add( "创建时间" )
+								}, new java.util.Vector {
+									add( null )
+									add( null )
+									add( null )
+									add( null )
+								}, new java.util.Vector {
+									add( false )
+									add( false )
+									add( false )
+									add( false )
+								}, new java.util.Vector {
+									add( null )
+									add( null )
+									add( null )
+									add( null )
+								} )
+								"selectionBackground": new java.awt.Color( 51, 116, 130, 255 )
+								"rowHeight": 25
+								addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseReleased", "table_copyMouseReleased", true ) )
+							} )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 660
+							"x": 0
+							"y": 0
+							"height": 305
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 65
+						"y": 15
+						"height": 305
+						"width": 660
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label_synDate"
+						"text": "同步云端数据"
+						"border": &LineBorder0 new javax.swing.border.LineBorder( sfield java.awt.Color lightGray, 1, false )
+						"horizontalAlignment": 0
+						"foreground": &Color0 new java.awt.Color( 102, 102, 102, 255 )
+						"font": &Font1 new java.awt.Font( "等线", 0, 14 )
+						"cursor": &Cursor1 new java.awt.Cursor( 12 )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "label1MouseClicked", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 85
+						"y": 350
+						"width": 120
+						"height": 40
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label_addDate"
+						"text": "添加数据"
+						"border": #LineBorder0
+						"horizontalAlignment": 0
+						"foreground": #Color0
+						"font": #Font1
+						"cursor": #Cursor1
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "label_addDateMouseClicked", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 120
+						"height": 40
+						"x": 230
+						"y": 350
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label_delDate"
+						"text": "删除数据"
+						"border": #LineBorder0
+						"horizontalAlignment": 0
+						"foreground": #Color0
+						"font": #Font1
+						"cursor": #Cursor1
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "label_delDateMouseClicked", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 120
+						"height": 40
+						"x": 375
+						"y": 350
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+						"autoSize": false
+					} ) {
+						name: "panel1"
+						"background": new java.awt.Color( 255, 255, 255, 255 )
+						"visible": false
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "textField_addaccount"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 5
+							"y": 40
+							"width": 130
+							"height": 30
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "textField_addpasswd"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 130
+							"height": 30
+							"x": 150
+							"y": 40
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "textField_addfromweb"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 130
+							"height": 30
+							"x": 295
+							"y": 40
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label_cheak"
+							"text": "确认添加"
+							"border": #LineBorder0
+							"horizontalAlignment": 0
+							"foreground": #Color0
+							"font": #Font1
+							"cursor": #Cursor1
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "label_cheakMouseClicked", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 70
+							"height": 30
+							"x": 435
+							"y": 40
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label_account"
+							"text": "账号"
+							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"horizontalAlignment": 0
+							"foreground": #Color0
+							"font": #Font1
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 70
+							"height": 30
+							"x": 35
+							"y": 5
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label_passwd"
+							"text": "密码"
+							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"horizontalAlignment": 0
+							"foreground": #Color0
+							"font": #Font1
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 70
+							"height": 30
+							"x": 180
+							"y": 5
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label_fromweb"
+							"text": "网站( 可空 )"
+							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"horizontalAlignment": 0
+							"foreground": #Color0
+							"font": #Font1
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 75
+							"height": 30
+							"x": 325
+							"y": 5
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 75
+						"y": 405
+						"height": 85
+						"width": 515
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "text"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+					"autoSize": false
+				} ) {
+					name: "关于作者"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label_aboutLogo"
+						"horizontalAlignment": 0
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/com/MianJu/Test/GUI/resources/大Logo.jpg" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 220
+						"y": 15
+						"width": 290
+						"height": 280
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label_myweb"
+						"text": "面具的个人网站：http://mianj.xyz/"
+						"horizontalAlignment": 0
+						"cursor": &Cursor2 new java.awt.Cursor( 12 )
+						"font": &Font2 new java.awt.Font( "微软雅黑", 0, 16 )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseReleased", "label_mywebMouseReleased", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 165
+						"y": 305
+						"width": 400
+						"height": 65
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label_giteeweb"
+						"text": "MjPasswd gitee：https://gitee.com/mian_j/mj-passwd"
+						"horizontalAlignment": 0
+						"cursor": #Cursor2
+						"font": #Font2
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseReleased", "label_giteewebMouseReleased", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 465
+						"height": 65
+						"x": 133
+						"y": 370
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "text"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+					"autoSize": false
+				} ) {
+					name: "个人账号"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					add( new FormContainer( "javax.swing.JDesktopPane", new FormLayoutManager( class javax.swing.JDesktopPane ) ) {
+						name: "desktopPane_email"
+						"background": &Color1 new java.awt.Color( 255, 255, 255, 255 )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "textField_email"
+							"font": &Font3 new java.awt.Font( "黑体", 0, 16 )
+							"border": &LineBorder1 new javax.swing.border.LineBorder( sfield java.awt.Color lightGray, 1, false )
+							"editable": false
+						}, new FormLayoutConstraints( null ) {
+							"width": 240
+							"height": 30
+							"x": 90
+							"y": 0
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label_nowemail"
+							"text": "当前邮箱："
+							"font": &Font4 new java.awt.Font( "微软雅黑", 0, 16 )
+							"horizontalAlignment": 2
+						}, new FormLayoutConstraints( null ) {
+							"width": 85
+							"height": 30
+							"x": 0
+							"y": 0
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 135
+						"y": 45
+						"height": 30
+						"width": 375
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label_modemail"
+						"text": "修改邮箱"
+						"horizontalAlignment": 0
+						"border": &LineBorder2 new javax.swing.border.LineBorder( sfield java.awt.Color lightGray, 1, false )
+						"foreground": &Color2 new java.awt.Color( 102, 102, 102, 255 )
+						"cursor": #Cursor2
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "label_modemailMouseClicked", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 515
+						"y": 45
+						"width": 65
+						"height": 30
+					} )
+					add( new FormContainer( "javax.swing.JDesktopPane", new FormLayoutManager( class javax.swing.JDesktopPane ) ) {
+						name: "desktopPane_Passwd"
+						"background": #Color1
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "textField_passwd"
+							"font": #Font3
+							"border": #LineBorder1
+							"editable": false
+							"text": "**********"
+						}, new FormLayoutConstraints( null ) {
+							"width": 240
+							"height": 30
+							"x": 90
+							"y": 0
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label4"
+							"text": "当前密码："
+							"font": #Font4
+							"horizontalAlignment": 2
+						}, new FormLayoutConstraints( null ) {
+							"width": 85
+							"height": 30
+							"x": 0
+							"y": 0
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 375
+						"height": 30
+						"x": 135
+						"y": 95
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label_modpasswd"
+						"text": "修改密码"
+						"horizontalAlignment": 0
+						"border": #LineBorder2
+						"foreground": #Color2
+						"cursor": #Cursor2
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "label_modpasswdMouseClicked", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 65
+						"height": 30
+						"x": 515
+						"y": 95
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label_hasdate"
+						"text": "当前拥有数据："
+						"font": #Font4
+						"horizontalAlignment": 2
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 365
+						"height": 30
+						"x": 135
+						"y": 145
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label_maxdate"
+						"text": "拥有最大数据量："
+						"font": #Font4
+						"horizontalAlignment": 2
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 365
+						"height": 30
+						"x": 135
+						"y": 195
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "text"
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 125
+				"y": 0
+				"width": 785
+				"height": 605
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"size": new java.awt.Dimension( 900, 593 )
+			"location": new java.awt.Point( 35, 0 )
+		} )
+		add( new FormContainer( "javax.swing.JPopupMenu", new FormLayoutManager( class javax.swing.JPopupMenu ) ) {
+			name: "popupMenu1"
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button_copyAccount"
+				"text": "复制账号"
+				"font": &Font5 new java.awt.Font( "等线", 0, 14 )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button3MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button_copyPasswd"
+				"text": "复制密码"
+				"font": #Font5
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button4MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button_copyWeb"
+				"text": "复制网站"
+				"font": #Font5
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button_copyWebMouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button_synDate"
+				"text": "同步数据"
+				"font": #Font5
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button_synDateMouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button_delDate"
+				"text": "删除数据"
+				"font": #Font5
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseReleased", "button_delDateMouseReleased", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 960, 240 )
+			"size": new java.awt.Dimension( 95, 130 )
+		} )
+	}
+}
