@@ -4,9 +4,6 @@
 
 package com.MianJu.src.GUI;
 
-import com.MianJu.Test.GUI.Function;
-import com.MianJu.Test.GUI.LoginTools;
-import com.MianJu.Test.GUI.RemindWin;
 import com.MianJu.src.core.UserClass;
 import com.MianJu.src.tools.LoginUser;
 
@@ -16,7 +13,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.Map;
 import javax.swing.*;
 
 /**
@@ -34,6 +30,7 @@ public class Login extends JFrame {
     }
 
     private void login(){
+        button_login.setEnabled(false);
         String userAccount = text_account.getText();
         String userPasswd = String.valueOf(passwordField_passwd.getPassword());
         UserClass userClass = new UserClass(userAccount,userPasswd);
@@ -57,10 +54,12 @@ public class Login extends JFrame {
             } else {
                 RemindWin.instance(loginwin, "登录失败，请检查账号密码");
                 System.out.println("弹窗：登录失败，请检查账号密码");
+                button_login.setEnabled(true);
             }
         }catch (Exception exception){
             RemindWin.instance(loginwin, "网络连接失败，请检查网络设置");
             System.out.println("弹窗：网络连接失败，请检查网络设置");
+            button_login.setEnabled(true);
         }
     }
         // ---------监听事件------------
@@ -122,7 +121,10 @@ public class Login extends JFrame {
     }
 
     private void button_loginMousePressed(MouseEvent e) {//登录按钮按下
-        if (!(text_account.getText().isEmpty()) && !(String.valueOf(passwordField_passwd.getPassword()).isEmpty()) && !(text_account.getText().equals("请输入账号")) && !(String.valueOf(passwordField_passwd.getPassword()).equals("请输入密码"))) {
+
+        if (!(text_account.getText().isEmpty()) && !(String.valueOf(passwordField_passwd.getPassword()).isEmpty()) &&
+                !(text_account.getText().equals("请输入账号")) &&
+                !(String.valueOf(passwordField_passwd.getPassword()).equals("请输入密码")) && button_login.isEnabled()) {
             button_login.setIcon(new ImageIcon(getClass().getResource("/com/MianJu/Test/GUI/resources/立即登录_按下.png")));
             login();
         }
@@ -155,16 +157,31 @@ public class Login extends JFrame {
     private void button_registerMouseClicked(MouseEvent e) {//点击注册按钮
         if (!(text_account2.getText().isEmpty()) && !(String.valueOf(passwordField_passwd2.getPassword()).isEmpty()) &&
                 !(String.valueOf(passwordField_passwd3.getPassword()).isEmpty()) && !(text_email2.getText().isEmpty())
-                && !label_account_tips.isVisible() && !label_passwd_tips.isVisible() && !label_passwd_cheak_tips.isVisible()
-         && !label_email_tips.isVisible()) {
+                && !(label_account_tips.isVisible()) && !(label_passwd_tips.isVisible()) && !(label_passwd_cheak_tips.isVisible())
+         && !label_email_tips.isVisible() && button_register.isEnabled()) {
+            button_register.setEnabled(false);
             UserClass userClass = new UserClass(text_account2.getText(), String.valueOf(passwordField_passwd2.getPassword()), text_email2.getText());
             if (LoginUser.RegisterUser(userClass)) {
+                tabbedPane1.setSelectedIndex(0);
+                RemindWin.instance(loginwin,"注册成功");
                 System.out.println("注册成功");
+                button_register.setEnabled(true);
+
+                //清空注册文本
+                text_account2.setText("");
+                passwordField_passwd2.setText("");
+                passwordField_passwd3.setText("");
+                text_email2.setText("");
+
             } else {
+                RemindWin.instance(loginwin,"相同的账号或邮箱已存在");
                 System.out.println("弹窗：相同的账号或邮箱已存在");
+                button_register.setEnabled(true);
             }
         }else {
+            RemindWin.instance(loginwin,"请输入正确且完整的账号数据");
             System.out.println("弹窗：请输入正确且完整的账号数据");
+            button_register.setEnabled(true);
         }
     }
 

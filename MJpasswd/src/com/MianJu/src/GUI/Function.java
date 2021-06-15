@@ -5,7 +5,7 @@
 package com.MianJu.src.GUI;
 
 import com.MianJu.SQL.MysqlController;
-import com.MianJu.Test.GUI.RemindWin;
+import com.MianJu.src.GUI.RemindWin;
 import com.MianJu.src.core.UserClass;
 import com.MianJu.src.core.UserPasswdClass;
 import com.MianJu.src.tools.UserPasswdDate;
@@ -26,6 +26,7 @@ import javax.swing.table.*;
  * @author 1
  */
 public class Function {
+    Thread thread;
     boolean isDrag;
     static Point origin = new Point();
     private UserClass userClass;
@@ -58,7 +59,6 @@ public class Function {
     public boolean synchDate(){//同步云端数据
 //        RemindWin.instance(FunctionWin,"正在同步数据……请稍后");
 
-
         try {
             userPasswdClass.synDate(userPasswdDateServer, userClass);
         }catch (NullPointerException e){
@@ -89,9 +89,14 @@ public class Function {
 
 
             RemindWin.instance(FunctionWin,"数据同步完成");
+            label_synDate.setEnabled(true);
+            button_synDate.setEnabled(true);
+
             return true;
         }
         RemindWin.instance(FunctionWin,"数据同步失败，请检查网络");
+        label_synDate.setEnabled(true);
+        button_synDate.setEnabled(true);
         return false;
     }
 
@@ -107,12 +112,15 @@ public class Function {
         UserPasswdDate addDate = new UserPasswdDate();
         if (addDate.createUserPasswd(addPasswdClass)){
             RemindWin.instance(FunctionWin,"数据添加成功，点击同步查看");
+            label_addDate.setEnabled(true);
             return true;
         }else if (userClass.getMaxUserCount() == userClass.getCount()){
             RemindWin.instance(FunctionWin,"拥有数据达到最大数量，添加失败");
+            label_addDate.setEnabled(true);
             return false;
         }
         RemindWin.instance(FunctionWin,"添加数据失败，请检查网络");
+        label_addDate.setEnabled(true);
         return false;
     }
 
@@ -218,7 +226,6 @@ public class Function {
 
 
 
-
     private void button_copyWebMouseClicked(MouseEvent e) {//点击复制网站
         if (!setIntoClipboard(table_copy.getValueAt(table_copy.getSelectedRow(), 2).toString())){
             System.out.println("弹窗：复制失败");
@@ -227,11 +234,34 @@ public class Function {
     }
 
     private void button_synDateMouseClicked(MouseEvent e) {//点击菜单同步数据
-        synchDate();
+        RemindWin.instance(FunctionWin,"正在同步，请稍后……");
+        if (button_synDate.isEnabled()) {
+            button_synDate.setEnabled(false);
+            Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    synchDate();
+                }
+            };
+            synchDate();
+            thread = new Thread(runnable);
+            thread.start();
+        }
     }
 
-    private void label1MouseClicked(MouseEvent e) {//点击同步云端数据
-        synchDate();
+    private void label1MouseClicked (MouseEvent e){//点击同步云端数据
+            RemindWin.instance(FunctionWin,"正在同步，请稍后……");
+            if (label_synDate.isEnabled()) {//一定要多线程来解决
+                label_synDate.setEnabled(false);
+                Runnable runnable = new Runnable() {
+                    @Override
+                    public void run() {
+                        synchDate();
+                    }
+                };
+                thread = new Thread(runnable);
+                thread.start();
+            }
     }
 
     private void label_addDateMouseClicked(MouseEvent e) {//单击添加数据
@@ -239,8 +269,14 @@ public class Function {
     }
 
     private void label_delDateMouseClicked(MouseEvent e) {//单机删除数据
-        if (table_copy.getSelectedRow() != -1){
-            delDate(table_copy.getSelectedRow());
+
+        int row = table_copy.getSelectedRow();
+        if (table_copy.getSelectedRow() != -1 && label_delDate.isEnabled()){
+
+            delDate(row);
+
+            DefaultTableModel tableModel = (DefaultTableModel) table_copy.getModel();
+            tableModel.removeRow(row);
         }
     }
 
@@ -300,7 +336,15 @@ public class Function {
 
     private void label_cheakMouseClicked(MouseEvent e) {//点击确认添加数据
         if (!textField_addaccount.getText().isEmpty() && !textField_addpasswd.getText().isEmpty()) {
-            addDate();
+            if (label_addDate.isEnabled()) {
+                label_addDate.setEnabled(false);
+                addDate();
+
+            }
+
+            textField_addaccount.setText("");
+            textField_addpasswd.setText("");
+            textField_addfromweb.setText("");
         }else{
             System.out.println("弹窗：请把数据填写完毕");
             RemindWin.instance(FunctionWin,"请把数据填写完毕");
@@ -314,9 +358,16 @@ public class Function {
     }
 
     private void button_delDateMouseReleased(MouseEvent e) {//放开右键菜单删除
-        if (table_copy.getSelectedRow() != -1){
-            delDate(table_copy.getSelectedRow());
+
+        int row = table_copy.getSelectedRow();
+
+        if (row != -1 && button_delDate.isEnabled()){
+            delDate(row);
+            DefaultTableModel tableModel = (DefaultTableModel) table_copy.getModel();
+
+            tableModel.removeRow(row);
         }
+
     }
 
 

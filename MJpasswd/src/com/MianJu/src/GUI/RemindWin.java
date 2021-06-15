@@ -7,7 +7,6 @@ package com.MianJu.src.GUI;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.*;
 
 /**
  * @author 1
@@ -23,6 +22,7 @@ public class RemindWin extends JDialog {
 //单例，保证内存中只有一个消息框，其他消息框通过修改文本就可以
 
     private static RemindWin instance;
+
 
 
     public static RemindWin instance(Window window,String text){
