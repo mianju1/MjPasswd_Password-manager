@@ -1,7 +1,7 @@
 # MjPasswd
 
 #### 介绍
-MianJu的密码管理器：
+使用Java编写的一款密码管理，可以用于存储多种密码，云端同步；用Swing绘制图形化界面，美化自绘：
 
 ![yjtp](https://ae01.alicdn.com/kf/U9a22477757b242ad902ee9d807c4dfd3M.jpg)
 
